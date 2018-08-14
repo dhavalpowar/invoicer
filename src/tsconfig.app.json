@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "angularCompilerOptions": {
+    "entryModule": "./app/app.module#AppModule"
+  },
+  "compilerOptions": {
+    "outDir": "../out-tsc/invoicer",
+    "module": "es2015",
+    "types": []
+  },
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
+}
