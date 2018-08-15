@@ -1,0 +1,115 @@
+{
+  "configVersion": 1,
+  "index": "https://dhavalpowar.github.io/invoicer/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://dhavalpowar.github.io/invoicer/favicon.ico",
+        "https://dhavalpowar.github.io/invoicer/index.html"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://dhavalpowar.github.io/invoicer/assets/icons/apple-touch-icon.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-100x100.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-114x114.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-120x120.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-128x128.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-144x144.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-152x152.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-180x180.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-192x192.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-29x29.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-36x36.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-384x384.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-40x40.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-48x48.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-50x50.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-512x512.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-57x57.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-58x58.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-60x60.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-72x72.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-76x76.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-80x80.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-87x87.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/icon-96x96.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1024x768.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1242x2208.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1536x2048.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-2048x1536.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-2208x1242.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-320x480.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-640x1136.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-640x960.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-750x1334.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-768x1024.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://dhavalpowar.github.io/invoicer/assets/icons/apple-touch-icon.png": "af4abb00f0a47413f5e11b221f0edaf0379e4d7c",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-100x100.png": "13f6e8eb54617e58095b1941bdb3976f0486bbd2",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-114x114.png": "35b791d1c30f81c389c327ecd28c7f765fd8afb7",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-120x120.png": "dfd04ad34985daa4767e479796c8a858d8ef9b97",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-128x128.png": "24229bef07ef5ac8690a3ca02c3b6273d368f9ef",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-144x144.png": "337f21c7939ddb9cd48997ac7b6f4d33d98156f8",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-152x152.png": "0a358685ab2548114b66bae82c162f3934e2a140",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-180x180.png": "0c130fb0e4603e6e90392ead58df46c08efa27e7",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-192x192.png": "46e17357d5b9c1077fc505f3e81b265307dc6d7c",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-29x29.png": "a1f3276de5fa8dc7804c0ccdd8d68448fa37567f",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-36x36.png": "e1f54d706d69763d9f7b046d31232b0a745b1d28",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-384x384.png": "ba7b406d4ca512963583688ca77281e0d779cdf0",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-40x40.png": "d8b04e0d87dd4b5865f8039391e3c5bf0fafb46c",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-48x48.png": "bc5da0ef7ae318b993e7c4284669aa82ca74158f",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-50x50.png": "832ecab9ed764b3801d8eaa83a5711fded672c5c",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-512x512.png": "67470b1061ff8b043cecb10927988b662fd812c3",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-57x57.png": "97911f6f133779a2d9289b221b4bcd33dd3e2ee9",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-58x58.png": "3a62351b1adcef1fbe7c7904eb9851719272f5f1",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-60x60.png": "e3629bea93c755d5172db7e80e04577d1c50e847",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-72x72.png": "206b51ecd1c47295f0df43033e5f065a55103b4d",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-76x76.png": "42962bec723ce67b909ef994b9e747e820be688e",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-80x80.png": "991ffc8389bab9fd1a32b82b3d7de7a419736ee0",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-87x87.png": "f0f9ea7131b981facda4e33e9240812de71e0753",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/icon-96x96.png": "f008d62480232d2e26602f75f2b3d903dd9f1c81",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1024x768.png": "c5ff6c920ea8b2c1d37b6eca6945a0ba91c2ca15",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1242x2208.png": "d1f2a6e0ced24e1154e8e084abdb53a18947a69b",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1536x2048.png": "9e485a737ed750d09449a9b798d64adbf78e8792",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-2048x1536.png": "eeb5440847196630138c6de47d9d51419d8f1196",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-2208x1242.png": "47087a76892d416c0ed8489586994c341de30cf4",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-320x480.png": "7b1013dfba05bcd819f1d08fb36c41171f9bc494",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-640x1136.png": "da2a2ad1033d6a699ea52eb5eb13f9f383b26c50",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-640x960.png": "701072fd1584f7cba67a41827b43dce55c3e3ed3",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-750x1334.png": "fb3bd6ebf3852f0a78766eeac3b86dfe403e0a53",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-768x1024.png": "7b924179709a0b2bd41133360672760931451c15",
+    "https://dhavalpowar.github.io/invoicer/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://dhavalpowar.github.io/invoicer/index.html": "ab1be74d180fecec9320384a6e117ce4ac222cc0"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
