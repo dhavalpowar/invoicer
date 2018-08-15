@@ -15,6 +15,7 @@ import { reducers, metaReducers }   from './store/reducers';
 
 import { AppComponent } from './app.component';
 import { isPlatformBrowser } from '@angular/common';
+import { AppService } from './app.service';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { isPlatformBrowser } from '@angular/common';
      * https://akveo.github.io/nebular
      */
   ],
+  providers: [AppService],
   // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })

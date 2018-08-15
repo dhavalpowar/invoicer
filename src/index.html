@@ -4,11 +4,32 @@
   <meta charset="utf-8">
   <title>Invoicer</title>
   <base href="/">
+  <!-- iOS PWA specific meta tags -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Invoicer">
+  <link rel="apple-touch-startup-image" href="assets/splash_screens/ios-splash-2048x2732.png" sizes="2048x2732" >
+  <link rel="apple-touch-startup-image" href="assets/splash_screens/ios-splash-1668x2224.png" sizes="1668x2224" >
+  <link rel="apple-touch-startup-image" href="assets/splash_screens/ios-splash-1536x2048.png" sizes="1536x2048" >
+  <link rel="apple-touch-startup-image" href="assets/splash_screens/ios-splash-1242x2208.png" sizes="1242x2208" >
+  <link rel="apple-touch-startup-image" href="assets/splash_screens/ios-splash-1125x2436.png" sizes="1125x2436" >
+  <link rel="apple-touch-startup-image" href="assets/splash_screens/ios-splash-750x1334.png"  sizes="750x1334"  >
+  <link rel="apple-touch-startup-image" href="assets/splash_screens/ios-splash-640x1136.png"  sizes="640x1136"  >
+  <link rel="apple-touch-icon" href="assets/icons/icon-120x120.png" sizes="120x120" >
+  <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png" sizes="152x152" >
+  <link rel="apple-touch-icon" href="assets/icons/icon-167x167.png" sizes="167x167" >
+  <link rel="apple-touch-icon" href="assets/icons/icon-180x180.png" sizes="180x180" >
 
+
+  <meta name="theme-color" content="#2196f3">
+  <link rel="manifest" href="manifest.json">
+
+
+  <!-- Performance & Search enginer specific tags -->
   <meta name="Description" content="Create, export and email invoices to customers">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="/manifest.json">
   <link rel="dns-prefetch">
   <link rel="alternate" hreflang="en-us" />
 </head>
@@ -16,6 +37,7 @@
   <app-root>
     <div id="app-loading">Loading...</div>
   </app-root>
+  <!-- Fallback for a lack of javascript support -->
   <noscript>
     <div class="row">
         <div class="col-md-12 col-xs-12">

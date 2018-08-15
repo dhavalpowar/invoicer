@@ -8,7 +8,7 @@ export enum LayoutActionTypes {
   HideLoading       = '[Layout] Hide Loading',
   ShowProcessing    = ']Layout] Show Processing',
   HideProcessing    = '[Layout] Hide Processing',
-
+  ShowInstallNotification  = '[Layout] Show Install Notification'
 }
 
 export class SetAppAlert implements Action {
@@ -40,6 +40,10 @@ export class HideProcessing implements Action {
   readonly type = LayoutActionTypes.HideProcessing;
 }
 
+export class ShowInstallNotification implements Action {
+  readonly type = LayoutActionTypes.ShowInstallNotification;
+}
+
 export type LayoutActionsUnion = SetAppAlert | ShowAppAlert |
   HideAppAlert | ShowLoading | HideLoading |
-  ShowProcessing | HideProcessing;
+  ShowProcessing | HideProcessing | ShowInstallNotification;

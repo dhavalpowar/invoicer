@@ -26,6 +26,8 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 // ------------------------------------------------------------------------------
 
+app.enable('etag') ;
+
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
   providers: [
