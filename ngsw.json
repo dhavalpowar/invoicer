@@ -41,6 +41,7 @@
         "https://dhavalpowar.github.io/invoicer/assets/icons/icon-80x80.png",
         "https://dhavalpowar.github.io/invoicer/assets/icons/icon-87x87.png",
         "https://dhavalpowar.github.io/invoicer/assets/icons/icon-96x96.png",
+        "https://dhavalpowar.github.io/invoicer/assets/icons/iphoneplus_splash.png",
         "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1024x768.png",
         "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1242x2208.png",
         "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1536x2048.png",
@@ -81,6 +82,7 @@
     "https://dhavalpowar.github.io/invoicer/assets/icons/icon-80x80.png": "991ffc8389bab9fd1a32b82b3d7de7a419736ee0",
     "https://dhavalpowar.github.io/invoicer/assets/icons/icon-87x87.png": "f0f9ea7131b981facda4e33e9240812de71e0753",
     "https://dhavalpowar.github.io/invoicer/assets/icons/icon-96x96.png": "f008d62480232d2e26602f75f2b3d903dd9f1c81",
+    "https://dhavalpowar.github.io/invoicer/assets/icons/iphoneplus_splash.png": "184e8c08eccab7a4cc1511e67ee8b9fd27e9a18e",
     "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1024x768.png": "c5ff6c920ea8b2c1d37b6eca6945a0ba91c2ca15",
     "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1242x2208.png": "d1f2a6e0ced24e1154e8e084abdb53a18947a69b",
     "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-1536x2048.png": "9e485a737ed750d09449a9b798d64adbf78e8792",
@@ -92,7 +94,7 @@
     "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-750x1334.png": "fb3bd6ebf3852f0a78766eeac3b86dfe403e0a53",
     "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-768x1024.png": "7b924179709a0b2bd41133360672760931451c15",
     "https://dhavalpowar.github.io/invoicer/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://dhavalpowar.github.io/invoicer/index.html": "4c421292a0de0ba7171f23fed1d62c3fef1a192c"
+    "https://dhavalpowar.github.io/invoicer/index.html": "b09a1d16c59cac59083dc2df7062243995497ddb"
   },
   "navigationUrls": [
     {
