@@ -51,7 +51,14 @@
         "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-640x1136.png",
         "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-640x960.png",
         "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-750x1334.png",
-        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-768x1024.png"
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-768x1024.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ipad_splash.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ipadpro1_splash.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ipadpro2_splash.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/iphone5_splash.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/iphone6_splash.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/iphoneplus_splash.png",
+        "https://dhavalpowar.github.io/invoicer/assets/splash_screens/iphonex_splash.png"
       ],
       "patterns": []
     }
@@ -93,6 +100,13 @@
     "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-640x960.png": "701072fd1584f7cba67a41827b43dce55c3e3ed3",
     "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-750x1334.png": "fb3bd6ebf3852f0a78766eeac3b86dfe403e0a53",
     "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ios-splash-768x1024.png": "7b924179709a0b2bd41133360672760931451c15",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ipad_splash.png": "73ec078359485fbd0815b971390f57d5419eb55f",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ipadpro1_splash.png": "9f71139561dfc6ab115c95af89017bc1881ff6ae",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/ipadpro2_splash.png": "5aeed91d2d7347cd19cc85a900082957acb1cb18",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/iphone5_splash.png": "0129bb24f0b271e40fd87eabb3194082d93a2127",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/iphone6_splash.png": "65f05dcfab826a947b5e6b49a84fb35759bdb129",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/iphoneplus_splash.png": "184e8c08eccab7a4cc1511e67ee8b9fd27e9a18e",
+    "https://dhavalpowar.github.io/invoicer/assets/splash_screens/iphonex_splash.png": "a3bcf396f30ea7d4015b52921e6729b00f4d2b41",
     "https://dhavalpowar.github.io/invoicer/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
     "https://dhavalpowar.github.io/invoicer/index.html": "72279ea35ecc3f434cc482d00ac6e951160a655a"
   },
