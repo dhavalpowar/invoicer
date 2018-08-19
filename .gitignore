@@ -5,6 +5,10 @@
 /tmp
 /out-tsc
 /documentation
+/release-builds
+
+# app-specific
+main.js
 
 # dependencies
 /node_modules

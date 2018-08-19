@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './core/services/app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Invoicer';
+
+  constructor(private appService: AppService) {}
+
+  ngOnInit() {
+    this.appService.makeApiCall().subscribe(
+      (resp: any) => {
+        this.title = resp.data;
+      }
+    )
+  }
 }

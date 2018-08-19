@@ -8,5 +8,16 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+// Adding the NodeJS execution environment for electron apps.
+if (environment.electron) {
+  const script = document.createElement('script');
+  script.innerHTML = 'require(\'./dist/browser/renderer.js\')';
+  document.head.appendChild(script);
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch(err => console.log(err));
+});

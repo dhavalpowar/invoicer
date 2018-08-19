@@ -1,5 +1,12 @@
 # Invoicer
 
+## Features
+
+### Server-side Rendering (SSR)
+* Express server with `nguniversal` engine.
+* Support for lazy loaded modules in SSR
+* Reuse server side HTTP responses on the client.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server

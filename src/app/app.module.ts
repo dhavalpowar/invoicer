@@ -3,7 +3,8 @@ import { NgModule, PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { BrowserAnimationsModule }  from "@angular/platform-browser/animations";
 import { HttpModule }               from '@angular/http';
 import { HttpClientModule }         from '@angular/common/http';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule }      from '@angular/service-worker';
+import { TransferHttpCacheModule }  from '@nguniversal/common';
 import { StoreModule }              from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule }      from '@ngrx/store-devtools';
@@ -15,8 +16,7 @@ import { reducers, metaReducers }   from './store/reducers';
 
 import { AppComponent } from './app.component';
 import { isPlatformBrowser } from '@angular/common';
-import { AppService } from './app.service';
-
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { AppService } from './app.service';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'invoicer' }),
+    TransferHttpCacheModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     HttpModule,
@@ -74,8 +75,8 @@ import { AppService } from './app.service';
     /**
      * https://akveo.github.io/nebular
      */
+    CoreModule
   ],
-  providers: [AppService],
   // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })

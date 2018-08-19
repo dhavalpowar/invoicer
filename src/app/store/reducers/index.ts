@@ -19,6 +19,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
  * the state of the reducer plus any selector functions. The `* as`
  * notation packages up all of the exports into a single object.
  */
+import * as fromApp from './app.reducer';
 import * as fromLayout from './layout.reducer';
 import * as fromUser from './user.reducer';
 /**
@@ -26,6 +27,7 @@ import * as fromUser from './user.reducer';
  * our top level state interface is just a map of keys to inner state types.
  */
 export interface State {
+  app: fromApp.State;
   layout: fromLayout.State;
   user  : fromUser.State;
   router: fromRouter.RouterReducerState;
@@ -37,6 +39,7 @@ export interface State {
  * and the current or initial state and return a new immutable state.
  */
 export const reducers: ActionReducerMap<State> = {
+    app   : fromApp.reducer,
     layout: fromLayout.reducer,
     user  : fromUser.reducer,
     router: fromRouter.routerReducer,
@@ -61,6 +64,13 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
 : [];
 
 /**
+ * App reducers
+ */
+export const getAppState = createFeatureSelector<fromApp.State>(
+'app'
+);
+
+/**
 * Layout Reducers
 */
 export const getLayoutState = createFeatureSelector<fromLayout.State>(
@@ -72,6 +82,11 @@ export const getLayoutState = createFeatureSelector<fromLayout.State>(
 */
 export const getUserState = createFeatureSelector<fromUser.State>(
 'user'
+);
+
+export const getUpdateAvailable = createSelector(
+    getAppState,
+    fromApp.getUpdateAvailable
 );
 
 export const getAppAlert = createSelector(
