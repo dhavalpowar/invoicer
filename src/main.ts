@@ -10,9 +10,11 @@ if (environment.production) {
 
 // Adding the NodeJS execution environment for electron apps.
 if (environment.electron) {
-  const script = document.createElement('script');
-  script.innerHTML = 'require(\'./dist/browser/renderer.js\')';
-  document.head.appendChild(script);
+  // TODO: Breaks compodoc generation as of now. To be fixed.
+
+  // const script = document.createElement('script');
+  // script.innerHTML = 'require(\'./dist/browser/renderer.js\')';
+  // document.head.appendChild(script);
 }
 
 

@@ -7,7 +7,7 @@ import { AppService } from './core/services/app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Invoicer';
+  title = 'App';
 
   constructor(private appService: AppService) {}
 

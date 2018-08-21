@@ -24,7 +24,7 @@ config.constants = {
     }
 };
 
-config.port = Number(process.env.PORT) || 4201;
+config.port = Number(process.env.PORT) || 4200;
 config.environment = process.env.NODE_ENV || config.constants.env.DEVELOPMENT,
 config.etag = process.env.NODE_ENV === config.constants.env.PRODUCTION ? true : false;
 config.serverOptions = {

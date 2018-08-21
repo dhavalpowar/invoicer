@@ -96,7 +96,7 @@ app.get('*', (req, res) => {
     },
     {
       provide: APP_BASE_HREF,
-      useValue: `https://${req.headers.host}`
+      useValue: `${http}://${req.headers.host}`
     }
   ]},
   (err, html) => {
@@ -118,7 +118,7 @@ spdy
   })
 
 
-// Start up the Node server
+// Start up the Node HTTP server
 // app.listen(config, () => {
 //   console.log(`Node server listening on https://localhost:${config.port}`);
 // });
