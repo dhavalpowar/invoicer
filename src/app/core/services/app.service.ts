@@ -1,38 +1,33 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromStoreState from '../../store/reducers';
 import * as layoutActions from '../../store/actions/layout.actions';
 import { WINDOW } from './dom.service';
 import { HttpClient } from '@angular/common/http';
 import { SwUpdate } from '@angular/service-worker';
+import { isPlatformBrowser } from '@angular/common';
+import { Observable, of, merge, fromEvent } from 'rxjs';
+import { mapTo, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
   private updateAvailable: boolean = false;
+  private online$: Observable<boolean> = of(false);
 
   constructor(
     private store: Store<fromStoreState.State>,
     @Inject(WINDOW) private window: Window,
-    private httpClient: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object,
     private updates: SwUpdate
   ) {
-    updates.available.subscribe(event => {
-      this.updateAvailable = true;
-      console.log('update available');
-      console.log('current version is', event.current);
-      console.log('available version is', event.available);
-    });
+
     updates.activated.subscribe(event => {
       this.updateAvailable = false;
       console.log('old version was', event.previous);
       console.log('new version is', event.current);
     });
-  }
-
-  makeApiCall() {
-    return this.httpClient.get(`/api/response`);
   }
 
   isIosBrowser() {
@@ -62,6 +57,19 @@ export class AppService {
   }
 
   isAppUpdateAvailable() {
+    return this.updates.available.pipe(
+      map((event) => event.current !== event.available)
+    );
+  }
 
+  isAppOnline() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.online$ = merge(
+        of(navigator.onLine),
+        fromEvent(window, 'online').pipe(mapTo(true)),
+        fromEvent(window, 'offline').pipe(mapTo(false))
+      );
+    }
+    return this.online$;
   }
 }

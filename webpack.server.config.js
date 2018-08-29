@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
 module.exports = {
-  entry: { server: './server/server.ts' },
+  entry: { server: './server.ts' },
   resolve: { extensions: ['.js', '.ts'] },
   target: 'node',
   mode: 'none',

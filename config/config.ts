@@ -1,35 +1,34 @@
 import * as fs from 'fs';
+import { join } from 'path';
+const BASE_PATH = process.env.SRC_BASE_PATH || join(process.cwd(), '.', 'dist');
 
-interface Config {
-    port?: number;
-    environment?: string,
-    etag?: boolean,
-    serverOptions?: { key: Buffer, cert: Buffer };
-    constants?: any;
-}
-
-const config: Config = {};
-config.constants = {
-    dom: {
-        WINDOW: 'window',
-
+const config = {
+    port: Number(process.env.PORT) || 4200,
+    environment: process.env.NODE_ENV || 'development',
+    etag: process.env.NODE_ENV === 'production' ? true : false,
+    serverOptions: {
+        key: fs.readFileSync(process.env.SSL_KEY || `./dist/server.key`),
+        cert: fs.readFileSync(process.env.SSL_CERT || `./dist/server.crt`)
     },
-    headers: {
-        NO_COMPRESSION: 'x-no-compression'
+    src: {
+        path: BASE_PATH,
+        browser: {
+            path: join(BASE_PATH, 'browser'),
+            entry: process.env.SRC_ENTRY || 'index.html' || 'index.js'
+        },
+        server: {
+            path: join(BASE_PATH, 'browser'),
+            entry: process.env.SRC_ENTRY || 'index.html' || 'index.js'
+        }
     },
-    env: {
-        PRODUCTION: 'production',
-        DEVELOPMENT: 'development',
-        TEST: 'test'
+    constants: {
+        env: {
+            PRODUCTION: 'production',
+            DEVELOPMENT: 'development',
+            TEST: 'test'
+        }
     }
 };
 
-config.port = Number(process.env.PORT) || 4200;
-config.environment = process.env.NODE_ENV || config.constants.env.DEVELOPMENT,
-config.etag = process.env.NODE_ENV === config.constants.env.PRODUCTION ? true : false;
-config.serverOptions = {
-    key: fs.readFileSync(process.env.SSL_KEY || `./dist/server.key`),
-    cert: fs.readFileSync(process.env.SSL_CERT || `./dist/server.crt`)
-};
 
 export default config;

@@ -8,7 +8,7 @@ import * as fs from 'fs';
 import { join } from 'path';
 import * as spdy from 'spdy';
 import * as domino from 'domino';
-import config from '../config/config';
+import config from './config/config';
 //---------------------- DEV Environment specifics ------------------------------
 if (process.env.NODE_ENV !== config.constants.env.PRODUCTION) {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== config.constants.env.PRODUCTION) {
 
 //---------- Attaching server-side missing DOM objects --------------------------
 // Creating template string
-const template = fs.readFileSync(join(process.cwd(), '.', 'dist', 'browser', 'index.html')).toString();
+const template = fs.readFileSync(`${config.src.browser.path}/${config.src.browser.entry}`).toString();
 // Creating a window object using that template string and domino
 const win = domino.createWindow(template);
 // Making window global.
@@ -31,10 +31,7 @@ Object.defineProperty(win.document.body.style, 'transform', {
 });
 // Making document global
 global['document'] = win.document;
-// Making CSS null
-global['CSS'] = null;
 // global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
-global['Prism'] = null;
 
 //------------- Faster server renders w/ Prod mode (dev mode never needed)-------
 enableProdMode();
@@ -42,10 +39,10 @@ enableProdMode();
 
 //-------------------------- Express server & Engine ----------------------------
 const app = express();
-const DIST_FOLDER = join(process.cwd(), 'dist');
+const DIST_FOLDER = config.src.path;
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../dist/server/main');
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main');
 
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
@@ -54,9 +51,6 @@ import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import { APP_BASE_HREF } from '@angular/common';
 // ------------------------------------------------------------------------------
-
-// Etag support
-if (config.etag) app.enable('etag');
 
 // SSR engine
 app.engine('html', ngExpressEngine({
