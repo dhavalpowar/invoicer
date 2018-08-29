@@ -3,56 +3,55 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import { enableProdMode } from '@angular/core';
 //-------------------------------------------------------------------------------
-import * as express from 'express';
-import * as fs from 'fs';
-import { join } from 'path';
-import * as spdy from 'spdy';
-import * as domino from 'domino';
-import config from './config/config';
+import * as express   from 'express';
+import * as fs        from 'fs';
+import { join }       from 'path';
+import * as spdy      from 'spdy';
+import * as domino    from 'domino';
+import config         from './config/config';
 //---------------------- DEV Environment specifics ------------------------------
-if (process.env.NODE_ENV !== config.constants.env.PRODUCTION) {
+if (config.environment !== config.constants.PRODUCTION) {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 }
 
 //---------- Attaching server-side missing DOM objects --------------------------
 // Creating template string
-const template = fs.readFileSync(`${config.src.browser.path}/${config.src.browser.entry}`).toString();
+const template    = fs.readFileSync(`${config.dist.browser.path}/${config.dist.browser.entry}`).toString();
 // Creating a window object using that template string and domino
-const win = domino.createWindow(template);
+const win         = domino.createWindow(template);
 // Making window global.
-global['window'] = win;
-Object.defineProperty(win.document.body.style, 'transform', {
-  value: () => {
-    return {
-      enumerable: true,
-      configurable: true
-    };
-  },
-});
+global['window']  = win;
+Object.defineProperty(
+  win.document.body.style,
+  'transform',
+  {
+    value: () => {
+      return {
+        enumerable: true,
+        configurable: true
+      };
+    },
+  }
+);
+
 // Making document global
 global['document'] = win.document;
 // global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
 
-//------------- Faster server renders w/ Prod mode (dev mode never needed)-------
+//------------- Faster server renders w/ Prod mode ------------------------------
 enableProdMode();
-//-------------------------------------------------------------------------------
-
 //-------------------------- Express server & Engine ----------------------------
-const app = express();
-const DIST_FOLDER = config.src.path;
-
+const app          = express();
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main');
 
-import { ngExpressEngine } from '@nguniversal/express-engine';
-import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
+import { ngExpressEngine }    from '@nguniversal/express-engine';
+import { REQUEST, RESPONSE }  from '@nguniversal/express-engine/tokens';
 
 // Import module map for lazy loading
-import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
-import { APP_BASE_HREF } from '@angular/common';
-// ------------------------------------------------------------------------------
-
-// SSR engine
+import { provideModuleMap }   from '@nguniversal/module-map-ngfactory-loader';
+import { APP_BASE_HREF }      from '@angular/common';
+// ------------------------------ SSR engine ------------------------------------
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
   providers: [
@@ -61,10 +60,11 @@ app.engine('html', ngExpressEngine({
 }));
 
 app.set('view engine', 'html');
-app.set('views', join(DIST_FOLDER, 'browser'));
+app.set('views', join(config.dist.path, 'browser'));
+// ----------------------------- Express Routes ----------------------------------
 
 // Server static files from /browser
-app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
+app.get('*.*', express.static(join(config.dist.path, 'browser')));
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
@@ -81,9 +81,10 @@ app.get('*', (req, res) => {
     {
       provide: RESPONSE, useValue: (res)
     },
+    // Provide the app's base URL context for Angular SSR to make outgoing requests against
     {
-      provide: APP_BASE_HREF,
-      useValue: `${http}://${req.headers.host}`
+      provide   : APP_BASE_HREF,
+      useValue  : `${http}://${req.headers.host}`
     }
   ]},
   (err, html) => {
@@ -98,14 +99,13 @@ app.get('*', (req, res) => {
 
 // Start up the SPDY HTTP2 server
 spdy
-  .createServer(config.serverOptions, app)
+  .createServer(config.ssl, app)
   .listen(config.port, (err) => {
     if (err) throw new Error(err);
-    console.log(`SPDY HTTP2 server listening on https://localhost:${config.port}`);
-  })
+    console.log(`${config.appName} (http2) server listening on https://localhost:${config.port}`);
+  });
 
-
-// Start up the Node HTTP server
-// app.listen(config, () => {
+// Start up a regular Node HTTP server
+// app.listen(config.ssl, () => {
 //   console.log(`Node server listening on https://localhost:${config.port}`);
 // });
